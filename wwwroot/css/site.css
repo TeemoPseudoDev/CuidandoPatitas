@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 24px; /* Tamaño fijo del texto */
+    color: #007bff; /* Azul primario */
+}
+
+.navbar-brand span {
+    text-align: justify;
+    line-height: 1.2; /* Espaciado entre líneas */
+}
+
+.navbar-brand:hover {
+    color: #0056b3; /* Cambio de color al pasar el cursor */
+}
+
+.navbar-brand .paw {
+    font-size: 20px; /* Tamaño de las patitas */
+    margin-top: 5px;
+}
+
+
+/* Efecto hover en el enlace principal */
+.nav-link.dropdown-toggle {
+    transition: color 0.3s ease;
+}
+
+.nav-link.dropdown-toggle:hover {
+    color: #007bff; /* Azul primario al pasar el mouse */
+}
+
+/* Efecto hover para los ítems del dropdown */
+.dropdown-menu .dropdown-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto blanco */
+}

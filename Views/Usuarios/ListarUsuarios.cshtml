@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authentication.Cookies;
+@using System.Security.Claims;
+@model List<ModelUsuarios>
+
+@{
+    ViewData["Title"] = "Listar Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="card-header">
+            <h1 class="text-center">LISTA DE USUARIOS</h1>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">USER</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">ROL</th>
+                            <th scope="col" class="text-end">ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Where(u => u.UsuarioActivo == 1))
+                        {
+                            <tr>
+                                <th scope="row">@item.UsuarioUserName</th>
+                                <td>@item.UsuarioNombre</td>
+                                <td>@item.UsuarioApellido</td>
+                                @if (item.UsuarioRol.Equals("cp_admin"))
+                                {
+                                    <td>ADMINISTRADOR</td>
+                                }
+                                else if (item.UsuarioRol.Equals("cp_rescatista"))
+                                {
+                                    <td>RESCATISTA</td>
+                                }
+                                else if (item.UsuarioRol.Equals("cp_adoptante"))
+                                {
+                                    <td>ADOPTANTE</td>
+                                }
+                                <td>
+                                    <div class="d-flex justify-content-end gap-2">
+                                        <form asp-controller="Usuarios" asp-action="TraerUsuario">
+                                            <input type="hidden" name="id" value="@item.UsuarioId" />
+                                            <button type="submit" class="btn btn-outline-success btn-sm" title="Ver Usuario">
+                                                <span class="material-symbols-outlined">visibility</span>
+                                            </button>
+                                        </form>
+                                        @if (User.IsInRole("cp_admin") || Convert.ToInt32(@User.FindFirst(ClaimTypes.NameIdentifier)?.Value) == item.UsuarioId)
+                                        {
+                                            <form asp-controller="Usuarios" asp-action="EditarUsuarioView">
+                                                <input type="hidden" name="id" value="@item.UsuarioId" />
+                                                <button type="submit" class="btn btn-outline-warning btn-sm" title="Editar Usuario">
+                                                    <span class="material-symbols-outlined">edit</span>
+                                                </button>
+                                            </form>
+                                        }
+
+                                        @if (User.IsInRole("cp_admin"))
+                                        {
+                                            <form asp-controller="Usuarios" asp-action="DesactivarUser">
+                                                <input type="hidden" name="id" value="@item.UsuarioId" />
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" title="Desactivar Usuario">
+                                                    <span class="material-symbols-outlined">delete</span>
+                                                </button>
+                                            </form>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="~/js/mensaje-success.js"></script>
+<script>
+    mostrarMensajeSuccess('@TempData["SuccessMessage"]'.replace(/'/g, "\\'"), "successAlert");
+</script>

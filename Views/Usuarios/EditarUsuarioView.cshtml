@@ -1,0 +1,117 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authentication.Cookies;
+
+@model ModelUsuarios
+
+
+@{
+    ViewData["Title"] = "EDITAR USUARIO";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Asegúrate de que este sea el layout que estás utilizando, si aplica
+}
+
+<h1>EDITAR USUARIO</h1>
+
+<div class="card">
+
+    <form asp-action="Editar" asp-controller="Usuarios" method="post">
+
+        <input asp-for="UsuarioId" type="hidden" class="form-control">
+
+        <div class="row g-3 align-items-center p-3 fw-bold">
+
+            <div class="col-md-4">
+                <label for="userName" class="form-label">Nombre de Usuario</label>
+                <input asp-for="UsuarioUserName" type="text" class="form-control" id="userName" placeholder="Ingresa tu nombre de usuario" required>
+            </div>             
+
+            <div class="col-md-4">
+                <label for="password" class="form-label">Contraseña</label>
+                <input asp-for="UsuarioPassword" type="text" class="form-control" id="password" placeholder="Ingresa tu contraseña"  required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="rol" class="form-label">Rol</label>
+                <select asp-for="UsuarioRol" class="form-select" id="documento" required>
+                    @if (User.IsInRole("cp_admin"))
+                    {
+                        <option value="cp_admin">ADMINISTRADOR</option>
+                    }
+                    <option value="cp_adoptante">ADOPTANTE</option>
+                    <option value="cp_rescatista">RESCATISTA</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input asp-for="UsuarioNombre" type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+            </div>
+
+            <div class="col-md-4">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input asp-for="UsuarioApellido" type="text" class="form-control" id="apellido" placeholder="Ingresa tu apellido">
+            </div>
+
+            <div class="col-md-4">
+                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                <input asp-for="UsuarioFechaNacimiento" type="date" class="form-control" id="fechaNacimiento">
+            </div>    
+
+            <div class="col-md-4">
+                <label for="documento" class="form-label">Tipo de Documento</label>
+                <select asp-for="DocumentoID" class="form-select" id="documento" required>
+                    @foreach (var doc in ViewBag.ListaDocumentos)
+                    {
+                        <option value="@doc.DocumentoID">@doc.DocumentoNombre</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="documentoId" class="form-label">Número de Documento</label>
+                <input asp-for="UsuarioDocumento" type="text" class="form-control" id="documentoId" placeholder="Ingrese su número de documento" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input asp-for="UsuarioEmail" type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+            </div>
+
+            <div class="col-md-4">
+                <label for="telefono1" class="form-label">Teléfono 1</label>
+                <input asp-for="UsuarioTelefono1" type="tel" class="form-control" id="telefono1" placeholder="Ingrese su primer teléfono">
+            </div>
+
+            <div class="col-md-4">
+                <label for="telefono2" class="form-label">Teléfono 2</label>
+                <input asp-for="UsuarioTelefono2" type="tel" class="form-control" id="telefono2" placeholder="Ingrese su segundo teléfono">
+            </div>
+
+            <div class="col-md-4">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input asp-for="UsuarioDireccion" type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección">
+            </div>
+
+            <div class="col-md-4">
+                <label for="localidad" class="form-label">Localidad</label>
+                <select asp-for="LocalidadId" class="form-select" id="localidad" placeholder="Ingrese su localidad"> 
+                <option value="1">Ituzaingo</option>
+                <option value="2">Morón</option>
+                <option value="3">Moreno</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="provincia" class="form-label">Provincia</label>
+                <select asp-for="ProvinciaId" type="text" class="form-select" id="provincia" placeholder="Ingrese su provincia"> 
+                <option value="1">CAPITAL FEDERAL</option>
+                <option value="2">BUENOS AIRES</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary mb-4 fw-bold">Registrarse</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>

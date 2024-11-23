@@ -1,0 +1,402 @@
+﻿@model ModelHome
+
+@{
+    ViewData["Title"] = "INDEX";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Asegúrate de que este sea el layout que estás utilizando, si aplica
+}
+
+<div class="hero_area">
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 offset-md-2">
+                                <div class="slider_detail-box">
+                                    <h1 style="font-size: 30px;">
+                                        Encuentra a tu Compañero Ideal
+                                        <span style="display: inline-block; font-size: 50px;">
+                                            Adopta una Mascota Hoy
+                                        </span>
+                                    </h1>
+                                    <p>
+                                        Cada mascota merece un hogar lleno de amor. Únete a nuestra misión y encuentra a tu nuevo mejor amigo.
+                                    </p>                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="slider_img-box">
+                                    <img src="images/slider-imgN.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 offset-md-2">
+                                <div class="slider_detail-box">
+                                    <h1 style="font-size: 50px;">
+                                        Rescatista
+                                        <span style="display: inline-block; font-size: 50px;">
+                                            Nuestros Héroes del Rescate
+                                        </span>
+                                    </h1>
+                                    <p>
+                                        Los rescatistas son el corazón de nuestra organización.
+                                        Ellos se dedican a salvar animales en situaciones de peligro, maltrato o abandono.
+                                        Gracias a su valentía y dedicación,
+                                        muchos animales tienen una segunda oportunidad para encontrar un hogar afectuoso.
+                                    </p>                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="slider_img-box">
+                                    <img src="images/rescatista.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 offset-md-2">
+                                <div class="slider_detail-box">
+                                    <h1 style="font-size: 50px;">
+                                        Veterinaria
+                                        <span style="display: inline-block; font-size: 50px;">
+                                            Cuidado Veterinario Integral
+                                        </span>
+                                    </h1>
+                                    <p>
+                                        Los equipos veterinarios se aseguran de que cada animal reciba la atención
+                                        médica necesaria para estar en óptimas condiciones de salud antes de ser adoptado.
+                                        La salud y el bienestar de nuestras mascotas son nuestra máxima prioridad.
+                                    </p>                                
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="slider_img-box">
+                                    <img src="images/vet.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 offset-md-2">
+                                <div class="slider_detail-box">
+                                    <h1 style="font-size: 50px;">
+                                        Fundación
+                                        <span style="display: inline-block; font-size: 50px;">
+                                            Cuidando Patitas 🐾
+                                        </span>
+                                    </h1>
+                                    <p>
+                                        "Cuidando Patitas" es un programa diseñado para apoyar a los rescatistas de animales. 
+                                        Reconocemos las dificultades económicas que enfrentan al proporcionar atención veterinaria adecuada 
+                                        y buscar hogares responsables para los animales rescatados.                                        
+                                        Facilitamos el proceso de encontrar adoptantes comprometidos y adecuados.
+                                    </p>                                  
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="slider_img-box">
+                                    <img src="images/fundacionN.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- end slider section -->
+</div>
+
+<!-- about section -->
+
+<section class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-box">
+                    <img src="images/about.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <h2 class="custom_heading">
+                        Programa de Adopciones y Asistencia Veterinaria Gratuita para
+                        <span>
+                            Rescatistas
+                        </span>
+                    </h2>
+                    <p>
+                        En "Cuidando Patitas 🐾", apoyamos a los rescatistas de animales brindándoles acceso gratuito a servicios veterinarios de calidad, aliviando su carga económica y facilitando la adopción responsable. Nuestro programa está diseñado para que puedan enfocarse en el cuidado, refugio y rehabilitación de los animales.
+                        Además, gracias a nuestras alianzas con veterinarias y marcas, ofrecemos tratamientos con descuento, generamos una comunidad comprometida y fomentamos donaciones y suscripciones que ofrecen beneficios exclusivos.
+                    </p>
+                    <div>
+                        <a class="nav-link rounded" asp-area="" asp-controller="Home" asp-action="Nosotros">
+                                <h2>Conocenos</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- service section -->
+<section class="service_section layout_padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-2">
+                <h2 class="custom_heading">
+                    Nuestros <span>Servicios</span>
+                </h2>
+                <div class="container layout_padding2">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="img_box">
+                                <img src="images/s-1.png" alt="">
+                            </div>
+                            <div class="detail_box">
+                                <h6>
+                                    Cuidado de Mascotas
+                                </h6>
+                                <p>
+                                    Enfocado en las consultas y el seguimiento veterinario para asegurar que las mascotas rescatadas estén en buen estado de salud.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="img_box">
+                                <img src="images/s-2.png" alt="">
+                            </div>
+                            <div class="detail_box">
+                                <h6>
+                                    Asistencia a Rescatistas
+                                </h6>
+                                <p>
+                                    A través del programa de asistencia, la plataforma proporciona acceso a consultas veterinarias a bajo costo, ayudando a los rescatistas y adoptantes a cubrir necesidades.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="img_box">
+                                <img src="images/s-3.png" alt="">
+                            </div>
+                            <div class="detail_box">
+                                <h6>
+                                    Atención de Emergencia
+                                </h6>
+                                <p>
+                                    Contamos con un servicio crucial para las mascotas que necesitan atención médica urgente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-md-4">
+                <img src="images/tool.png" alt="" class="w-100">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end service section -->
+<!-- gallery section -->
+
+<section class="gallery-section layout_padding">
+    <div class="container text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100px;">
+    <h2 style="font-family: 'Comic Sans MS', cursive;">
+        ❤ Últimos Rescataditos ❤
+    </h2>
+    </div>
+    <div class="container">
+        @if (Model.ListaRescatados != null && Model.ListaRescatados.Any())
+        {
+            int counter = 1;
+            <!-- Para asignar dinámicamente box-1, box-2, etc. -->
+            foreach (var animal in Model.ListaRescatados)
+            {
+                <div class="img_box box-@counter">
+                    <img src="@animal.imagen" alt="@animal.AnimalNombre" />
+                </div>
+                counter++;
+                if (counter > 5) break;
+                <!-- Mostrar solo las primeras 5 imágenes -->
+            }
+        }
+        else
+        {
+            <p>No hay animales rescatados en este momento.</p>
+        }
+    </div>
+</section>
+
+<!-- end gallery section -->
+<!-- buy section -->
+
+<section class="buy_section layout_padding">
+    <div class="container">
+        <h2>
+            Adopta una Mascota y Ayuda a los Rescatistas
+        </h2>
+        <p>
+            Cada adopción a través de nuestra plataforma no solo da un hogar amoroso a una mascota rescatada, sino que también apoya a los héroes que las salvan. Tu contribución ayuda a cubrir tratamientos veterinarios y cuidados esenciales para que sigan salvando vidas.
+        </p>       
+    </div>
+</section>
+
+<!-- end buy section -->
+<!-- client section -->
+<section class="client_section layout_padding-bottom">
+    <div class="container">
+        <h2 class="custom_heading text-center">
+            Lo que Dicen Nuestros
+            <span>
+                Adoptantes
+            </span>
+        </h2>
+        <p class="text-center">
+            Historias de adopción que también ayudan a salvar más vidas.
+        </p>
+        <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+                <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                @for (int i = 0; i < Model.ListaAdoptados.Count; i++)
+                {
+                    var adoptado = Model.ListaAdoptados[i];
+                    <div class="carousel-item @(i == 0 ? "active" : "")">
+                        <div class="layout_padding2 pl-100">
+                            <div class="client_container">
+                                <div class="img_box">
+                                    <img src="@adoptado.imagen" alt="@adoptado.AnimalNombre" style="max-width: 25px; width: auto; height: auto;">
+                                </div>
+                                <div class="detail_box">
+                                    <h5>@adoptado.AnimalNombre</h5>
+                                    <p>@adoptado.AnimalDescripcion</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+<!-- end client section -->
+<!-- map section -->
+
+<section class="map_section">    
+    <div class="form_container ">
+        <div class="row">
+            <div class="col-md-10 col-sm-10 offset-md-6">
+                <form asp-action="GuardarMensaje" asp-controller="Home" method="post" class="rounded border border-secondary">
+
+                    <div class="text-center">
+                        <h3>
+                            Contáctenos
+                        </h3>
+                    </div>
+
+                    <div>
+                        <input asp-for="MensajeNombre" type="text" placeholder="Nombre" class="pt-3" required>
+                    </div>           
+                    
+                    <div> 
+                        <input asp-for="MensajeMail" type="email" placeholder="Correo electrónico" required>
+                    </div>
+
+                    <div>
+                        <input asp-for="MensajeTelefono" type="text" placeholder="Asunto" required>
+                    </div>
+
+                    <div>
+                        <input asp-for="MensajeMensaje" type="text" class="message-box" placeholder="Mensaje" required>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit">
+                            ENVIAR
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- end map section -->
+<!-- info section -->
+<section class="info_section layout_padding2">
+    <div class="container">
+        <div class="info_items">
+            <a href="">
+                <div class="item ">
+                    <div class="img-box box-1">
+                        <img src="" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <p>
+                            Ubicación
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item ">
+                    <div class="img-box box-2">
+                        <img src="" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <p>
+                            +02 1234567890
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="item ">
+                    <div class="img-box box-3">
+                        <img src="" alt="">
+                    </div>
+                    <div class="detail-box">
+                        <p>
+                            cuidando.patitas.ok@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end info_section -->
